@@ -10,13 +10,14 @@
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![JWT Auth](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <br/>
 
-> **Essen** *(German for "to eat")* is a full-stack food delivery web application built with the MERN stack. It offers a sleek, glassmorphism-inspired UI where users can browse restaurant menus, search for dishes, manage their cart, and place orders — all with secure JWT-based authentication and real-time order tracking from a profile dashboard.
+> **Essen** *(German for "to eat")* is a full-stack food delivery web application I built while learning the MERN stack. It has features like JWT auth, a cart system, fake payment flow, and order tracking — all wrapped in a glassmorphism-inspired UI.
 
 <br/>
+
+![Essen App Banner](https://via.placeholder.com/900x300/1a1a2e/ffffff?text=🍽️+Essen+—+Food+Delivery+App)
 
 </div>
 
@@ -43,7 +44,7 @@
 
 | Technology | Purpose |
 |---|---|
-| ⚛️ React (Vite) | UI framework with fast HMR |
+| ⚛️ React (Vite) | UI framework with fast HMR (Hot Module Replacement) |
 | 🎨 Tailwind CSS | Utility-first styling & glassmorphism UI |
 | 🔗 React Router DOM | Client-side routing & navigation |
 | 📡 Axios | HTTP requests to REST API |
@@ -62,16 +63,16 @@
 
 ## ✨ Features
 
-- 🔐 **User Authentication** — Secure Signup & Login with JWT tokens and bcrypt password hashing
-- 🍕 **Food Listings** — Dynamic food items fetched from MongoDB via REST API
+- 🔐 **User Authentication** — Signup & Login with JWT tokens and bcrypt password hashing
+- 🍕 **Food Listings** — Food items fetched dynamically from MongoDB via REST API
 - 🔍 **Search Functionality** — Real-time dish search with instant filtering
-- 🛒 **Cart System** — Add/remove items with persistent cart state via React Context
-- ➕➖ **Quantity Control** — Increment and decrement item quantities in cart
-- 💰 **Price Calculation** — Automatic real-time total price computation
-- 💳 **Fake Payment Page** — UI for UPI, Credit/Debit Card, and Cash on Delivery
-- 📦 **Order Management** — Placed orders stored and tracked in MongoDB
-- 👤 **Profile Dashboard** — View order history and live order status
-- 📱 **Fully Responsive** — Mobile-first glassmorphism design, works on all devices
+- 🛒 **Cart System** — Add/remove items with cart state managed via React Context
+- ➕➖ **Quantity Control** — Increment and decrement item quantities directly in cart
+- 💰 **Price Calculation** — Auto-calculated total that updates as you modify the cart
+- 💳 **Payment Page** — UI for UPI, Credit/Debit Card, and Cash on Delivery (no real gateway)
+- 📦 **Order Management** — Orders saved to MongoDB and viewable from your profile
+- 👤 **Profile Dashboard** — See your order history and current order status
+- 📱 **Responsive UI** — Works on all screen sizes, built with a glassmorphism aesthetic
 
 ---
 
@@ -140,7 +141,7 @@ food-delivery-app/
 
 ### Prerequisites
 
-Make sure you have the following installed on your machine:
+Make sure you have these installed:
 
 - [Node.js](https://nodejs.org/) (v18+)
 - [MongoDB](https://www.mongodb.com/) (local or Atlas URI)
@@ -149,7 +150,7 @@ Make sure you have the following installed on your machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/essen-food-delivery.git
+git clone https://github.com/Ayushi2006/essen-food-delivery.git
 cd essen-food-delivery
 ```
 
@@ -169,13 +170,13 @@ npm install
 
 ### 4. Configure Environment Variables
 
-Create a `.env` file inside the `/server` directory (see [Environment Variables](#-environment-variables) section below).
+Create a `.env` file inside the `/server` directory (see [Environment Variables](#-environment-variables) below).
 
 ---
 
 ## 🔑 Environment Variables
 
-Create a `.env` file in the `/server` directory with the following variables:
+Create a `.env` file in the `/server` directory:
 
 ```env
 # Server Configuration
@@ -190,9 +191,9 @@ JWT_SECRET=your_super_secret_jwt_key_here
 JWT_EXPIRES_IN=7d
 ```
 
-> ⚠️ **Never commit your `.env` file.** It is already included in `.gitignore`.
+> ⚠️ **Don't commit your `.env` file.** It's already in `.gitignore`.
 
-For the client, if you need to configure the base API URL, create a `.env` file in `/client`:
+If you want to configure the API base URL on the frontend, create a `.env` in `/client`:
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
@@ -207,14 +208,14 @@ VITE_API_BASE_URL=http://localhost:5000/api
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
 | `POST` | `/api/auth/register` | Register a new user | ❌ |
-| `POST` | `/api/auth/login` | Login and get JWT token | ❌ |
-| `GET` | `/api/auth/me` | Get current user info | ✅ |
+| `POST` | `/api/auth/login` | Login and receive JWT token | ❌ |
+| `GET` | `/api/auth/me` | Get current logged-in user | ✅ |
 
 **Request Body — Register / Login:**
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
+  "name": "Ayushi",
+  "email": "ayushi@example.com",
   "password": "securepassword123"
 }
 ```
@@ -226,9 +227,9 @@ VITE_API_BASE_URL=http://localhost:5000/api
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
 | `GET` | `/api/food` | Get all food items | ❌ |
-| `GET` | `/api/food/:id` | Get single food item | ❌ |
-| `POST` | `/api/food` | Add new food item (admin) | ✅ |
-| `DELETE` | `/api/food/:id` | Delete food item (admin) | ✅ |
+| `GET` | `/api/food/:id` | Get a single food item | ❌ |
+| `POST` | `/api/food` | Add a new food item | ✅ |
+| `DELETE` | `/api/food/:id` | Delete a food item | ✅ |
 
 ---
 
@@ -237,8 +238,8 @@ VITE_API_BASE_URL=http://localhost:5000/api
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
 | `POST` | `/api/orders` | Place a new order | ✅ |
-| `GET` | `/api/orders/me` | Get logged-in user's orders | ✅ |
-| `GET` | `/api/orders/:id` | Get specific order details | ✅ |
+| `GET` | `/api/orders/me` | Get your order history | ✅ |
+| `GET` | `/api/orders/:id` | Get a specific order | ✅ |
 
 **Request Body — Place Order:**
 ```json
@@ -256,39 +257,39 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ## ▶️ Running the Project
 
-### Start the Backend Server
+### Start the Backend
 
 ```bash
 cd server
 npm run dev
 ```
 
-The Express server will start at **`http://localhost:5000`**
+Server runs at **`http://localhost:5000`**
 
-### Start the Frontend Dev Server
+### Start the Frontend
 
 ```bash
 cd client
 npm run dev
 ```
 
-The React app will start at **`http://localhost:5173`**
+React app runs at **`http://localhost:5173`**
 
-### Run Both Simultaneously (from root)
+### Run Both at Once (from root)
 
-If you set up a `concurrently` script in root `package.json`:
+If you have `concurrently` set up in the root `package.json`:
 
 ```bash
 npm run dev
 ```
 
-> 💡 Make sure MongoDB is running (locally or Atlas URI is set in `.env`) before starting the backend.
+> 💡 Make sure your MongoDB connection is working before starting the backend.
 
 ---
 
 ## 📸 Screenshots
 
-> Replace placeholders below with actual screenshots of your app.
+> Will add screenshots once the UI is finalized.
 
 ### 🏠 Home Page
 ![Home Page Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=🏠+Home+Page+—+ADD+SCREENSHOT+HERE)
@@ -302,34 +303,37 @@ npm run dev
 ### 💳 Payment Page
 ![Payment Page Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=💳+Payment+Page+—+ADD+SCREENSHOT+HERE)
 
-### 👤 Profile & Order History
+### 👤 Profile & Orders
 ![Profile Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=👤+Profile+Page+—+ADD+SCREENSHOT+HERE)
 
 ---
 
 ## 🔮 Future Improvements
 
-- [ ] 🛡️ **Admin Panel** — Full dashboard for managing menu items, users, and orders
-- [ ] 💬 **Real-time Order Tracking** — Live status updates using Socket.io
-- [ ] 🗺️ **Google Maps Integration** — Live delivery location tracking
-- [ ] 💳 **Razorpay / Stripe Integration** — Real payment gateway support
-- [ ] ⭐ **Ratings & Reviews** — Allow users to rate dishes after delivery
-- [ ] 🌍 **Multi-restaurant Support** — Onboard multiple restaurant partners
-- [ ] 📧 **Email Notifications** — Order confirmation and delivery alerts via Nodemailer
-- [ ] 🌙 **Dark Mode** — Toggle between light and dark themes
-- [ ] 📱 **React Native App** — Extend to a mobile application
+These are things I want to add eventually:
+
+- [ ] 🛡️ **Admin Panel** — Manage food items, users, and orders from a dashboard
+- [ ] 💬 **Real-time Order Tracking** — Live updates using Socket.io
+- [ ] 🗺️ **Map Integration** — Show delivery location on a map
+- [ ] 💳 **Real Payment Gateway** — Integrate Razorpay or Stripe
+- [ ] ⭐ **Ratings & Reviews** — Let users rate dishes after ordering
+- [ ] 📧 **Email Notifications** — Send order confirmation emails via Nodemailer
+- [ ] 🌙 **Dark Mode** — Add a proper dark/light toggle
+- [ ] 📱 **Mobile App** — Maybe a React Native version someday
 
 ---
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
 <div align="center">
 
-**Your Name**
+**Ayushi**
 
-[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=for-the-badge&logo=github)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-yourname-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourname)
-[![Portfolio](https://img.shields.io/badge/Portfolio-yourwebsite.com-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourwebsite.com)
+*CSE Student | AI & ML Specialization | BS Data Science @ IIT Madras*
+
+[![GitHub](https://img.shields.io/badge/GitHub-Ayushi2006-181717?style=for-the-badge&logo=github)](https://github.com/Ayushi2006)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayushi_R-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ayushi-r/)
+[![Email](https://img.shields.io/badge/Email-ayushi.rajak11@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ayushi.rajak11@gmail.com)
 
 </div>
 
@@ -337,8 +341,6 @@ npm run dev
 
 <div align="center">
 
-If you found this project helpful, please consider giving it a ⭐ — it means a lot!
-
-*Built with ❤️ using the MERN Stack*
+If this was helpful, a ⭐ would mean a lot — still figuring things out, one project at a time 🙃
 
 </div>
