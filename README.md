@@ -271,27 +271,6 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
-
-> Will add screenshots once the UI is finalized.
-
-### 🏠 Home Page
-![Home Page Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=🏠+Home+Page+—+ADD+SCREENSHOT+HERE)
-
-### 🍕 Food Menu
-![Food Menu Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=🍕+Food+Menu+—+ADD+SCREENSHOT+HERE)
-
-### 🛒 Cart Page
-![Cart Page Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=🛒+Cart+Page+—+ADD+SCREENSHOT+HERE)
-
-### 💳 Payment Page
-![Payment Page Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=💳+Payment+Page+—+ADD+SCREENSHOT+HERE)
-
-### 👤 Profile & Orders
-![Profile Screenshot](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=👤+Profile+Page+—+ADD+SCREENSHOT+HERE)
-
----
-
 ## 🔮 Future Improvements
 
 These are things I want to add eventually:
