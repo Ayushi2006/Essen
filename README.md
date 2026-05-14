@@ -18,8 +18,6 @@
 
 <br/>
 
-![Essen App Banner](https://via.placeholder.com/900x300/1a1a2e/ffffff?text=🍽️+Essen+—+Food+Delivery+App)
-
 </div>
 
 ---
