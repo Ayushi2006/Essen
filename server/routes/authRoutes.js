@@ -1,23 +1,28 @@
 const express = require("express");
-const router = express.Router();
-
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const router = express.Router();
+
 const User = require("../models/User");
 
-// REGISTER
-router.post("/register", async (req, res) => {
-  try {
-    const { name, email, password, phone, address } = req.body;
 
-    // CHECK USER
+// ================= REGISTER =================
+router.post("/register", async (req, res) => {
+
+  try {
+
+    const { name, email, password } = req.body;
+
+    // CHECK EXISTING USER
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
+
       return res.status(400).json({
         message: "User already exists",
       });
+
     }
 
     // HASH PASSWORD
@@ -28,125 +33,187 @@ router.post("/register", async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      phone,
-      address,
     });
 
     await user.save();
 
     res.status(201).json({
-      message: "Signup successful",
+      message: "User Registered Successfully",
     });
+
   } catch (error) {
+
     console.log(error);
 
     res.status(500).json({
-      message: error.message,
+      message: "Server Error",
     });
+
   }
 });
 
-// LOGIN
+
+// ================= LOGIN =================
 router.post("/login", async (req, res) => {
+
   try {
+
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
 
     if (!user) {
+
       return res.status(400).json({
-        message: "Invalid email",
+        message: "Invalid Email",
       });
+
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(
+      password,
+      user.password
+    );
 
     if (!isMatch) {
+
       return res.status(400).json({
-        message: "Invalid password",
+        message: "Invalid Password",
       });
+
     }
 
     // TOKEN
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    const token = jwt.sign(
+      { id: user._id },
+      "secretkey",
+      { expiresIn: "7d" }
+    );
 
     res.json({
       token,
       user,
     });
+
   } catch (error) {
+
     console.log(error);
 
     res.status(500).json({
-      message: error.message,
+      message: "Server Error",
     });
+
   }
 });
 
-// UPDATE ADDRESS
-router.put("/update-address/:id", async (req, res) => {
-  try {
-    const { address } = req.body;
 
-    const user = await User.findByIdAndUpdate(
-      req.params.id,
-      { address },
-      { new: true },
+// ================= UPLOAD PROFILE PHOTO =================
+router.put("/upload-profile", async (req, res) => {
+
+  try {
+
+    const { userId, image } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        profilePic: image,
+      },
+      { new: true }
     );
 
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({
-      message: error.message,
+    res.json({
+      message: "Profile Updated",
+      user: updatedUser,
     });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      message: "Upload Failed",
+    });
+
   }
 });
 
+
+// ================= UPDATE ADDRESS =================
+router.put("/update-address/:id", async (req, res) => {
+
+  try {
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        address: req.body.address,
+      },
+      { new: true }
+    );
+
+    res.json(updatedUser);
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      message: "Address Update Failed",
+    });
+
+  }
+});
+
+
+// ================= UPDATE PHONE =================
 router.put("/update-phone/:id", async (req, res) => {
 
   try {
 
-    const { phone } = req.body;
-
-    const user = await User.findByIdAndUpdate(
+    const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
-      { phone },
+      {
+        phone: req.body.phone,
+      },
       { new: true }
     );
 
-    res.json(user);
+    res.json(updatedUser);
 
   } catch (error) {
 
-    res.status(500).json({ message: error.message });
+    console.log(error);
+
+    res.status(500).json({
+      message: "Phone Update Failed",
+    });
 
   }
 });
 
-// UPDATE PROFILE PIC
-router.put("/upload-profile", async (req, res) => {
+
+// ================= DELETE ACCOUNT =================
+router.delete("/delete-account/:id", async (req, res) => {
+
   try {
-    const { userId, image } = req.body;
 
-    const user = await User.findById(userId);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-
-    user.profilePic = image;
-
-    await user.save();
+    await User.findByIdAndDelete(req.params.id);
 
     res.json({
-      message: "Profile updated",
-      user,
+      message: "Account Deleted Successfully",
     });
 
   } catch (error) {
-    res.status(500).json({ message: error.message });
+
+    console.log(error);
+
+    res.status(500).json({
+      message: "Delete Failed",
+    });
+
   }
 });
+
+
 module.exports = router;
