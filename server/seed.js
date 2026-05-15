@@ -41,6 +41,7 @@ const seedFoods = [
 
   { name: "Corn Dog", price: 319, image:"https://plus.unsplash.com/premium_photo-1664478260612-7c3c685d0998?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29ybiUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D", category:"Snacks"},
   { name: "Fish and Chips", price: 459, image:"https://plus.unsplash.com/premium_photo-1694108747175-889fdc786003?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlzaCUyMGFuZCUyMGNoaXBzfGVufDB8fDB8fHww", category:"Snacks"},
+  // { name:"Chai", price:30, image:"https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhaXxlbnwwfHwwfHx8MA%3D%3D", category:"Indian Beverages"},
 
 ];
 
