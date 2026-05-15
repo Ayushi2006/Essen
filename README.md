@@ -134,8 +134,8 @@ Make sure you have these installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Ayushi2006/essen-food-delivery.git
-cd essen-food-delivery
+git clone https://github.com/Ayushi2006/Essen.git
+cd Essen
 ```
 
 ### 2. Install Server Dependencies
