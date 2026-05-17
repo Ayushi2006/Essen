@@ -13,7 +13,7 @@
 
 <br/>
 
-> **Essen** *(German for "to eat")* is a full-stack food delivery web application I built while learning the MERN stack. It has features like JWT auth, a cart system, fake payment flow, and order tracking, all wrapped in a glassmorphism-inspired UI.
+> **Essen** *(German for "to eat")* is a full-stack food delivery web application I built while learning the MERN stack. It has features like JWT auth, a cart system, fake payment flow, and order tracking, all wrapped in a glassmorphism-inspired UI. 
 
 <br/>
 
