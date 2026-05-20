@@ -1,4 +1,4 @@
-<div align="center">   gshss
+<div align="center">  
   
 # 🍽️ Essen — Food Delivery App 
  
