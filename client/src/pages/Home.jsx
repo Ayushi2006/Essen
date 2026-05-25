@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
-function Home() {
+function Home() { 
 
   const [foods, setFoods] = useState([]);
   const [cart, setCart] = useState([]);
