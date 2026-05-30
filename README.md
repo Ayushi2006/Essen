@@ -2,7 +2,7 @@
       
 # 🍽️ Essen — Food Delivery App 
   
-### *Delicious food, delivered fast.*  
+### *Delicious food, delivered fast.*   
 
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-61DAFB?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![React](https://img.shields.io/badge/React-Vite-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
