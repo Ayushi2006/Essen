@@ -294,7 +294,6 @@ These are things I want to add eventually:
 
 *CSE Student | AI & ML Specialization | BS Data Science @ IIT Madras*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Ayushi2006-181717?style=for-the-badge&logo=github)](https://github.com/Ayushi2006)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayushi_R-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ayushi-r/)
 [![Email](https://img.shields.io/badge/Email-ayushi.rajak11@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ayushi.rajak11@gmail.com)
 
