@@ -1,6 +1,6 @@
 <div align="center">  
       
-# 🍽️ Essen
+# 🍽️ Essen - Food Delivery App
     
 ### *Delicious food, delivered fast.*    
  
