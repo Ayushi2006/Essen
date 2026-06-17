@@ -303,6 +303,6 @@ These are things I want to add eventually:
 
 <div align="center">
 
-If this was helpful, a ⭐ would mean a lot. Still figuring things out, one project at a time 🙃
+If this was helpful, a ⭐ would mean a lot.
 
 </div>
