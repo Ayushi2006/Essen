@@ -271,21 +271,6 @@ npm run dev
 
 ---
 
-## 🔮 Future Improvements
-
-These are things I want to add eventually:
-
-- [ ] 🛡️ **Admin Panel** — Manage food items, users, and orders from a dashboard
-- [ ] 💬 **Real-time Order Tracking** — Live updates using Socket.io
-- [ ] 🗺️ **Map Integration** — Show delivery location on a map
-- [ ] 💳 **Real Payment Gateway** — Integrate Razorpay or Stripe
-- [ ] ⭐ **Ratings & Reviews** — Let users rate dishes after ordering
-- [ ] 📧 **Email Notifications** — Send order confirmation emails via Nodemailer
-- [ ] 🌙 **Dark Mode** — Add a proper dark/light toggle
-- [ ] 📱 **Mobile App** — Maybe a React Native version someday
-
----
-
 ## 👩‍💻 Author
 
 <div align="center">
