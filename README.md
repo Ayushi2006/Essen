@@ -10,7 +10,7 @@
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![JWT Auth](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-
+ 
 <br/> 
 
 > **Essen** *(German for "to eat")* is a full-stack food delivery web application I built while learning the MERN stack. It has features like JWT auth, a cart system, fake payment flow, and order tracking, all wrapped in a glassmorphism-inspired UI. 
