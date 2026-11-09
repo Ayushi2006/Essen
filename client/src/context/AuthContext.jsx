@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     setToken(null);
-  };
+  }; 
 
   return (
     <AuthContext.Provider value={{
@@ -21,6 +21,6 @@ export const AuthProvider = ({ children }) => {
       logout
     }}>
       {children}
-    </AuthContext.Provider>
+    </AuthContext.Provider> 
   );
 };
