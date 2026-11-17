@@ -45,7 +45,7 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 -  **User Authentication** — Signup & Login with JWT tokens and bcrypt password hashing
 -  **Food Listings** — Food items fetched dynamically from MongoDB via REST API
@@ -175,7 +175,7 @@ JWT_SECRET=your_super_secret_jwt_key_here
 JWT_EXPIRES_IN=7d
 ```
 
-> ⚠️ **Don't commit your `.env` file.** It's already in `.gitignore`.
+>  **Don't commit your `.env` file.** It's already in `.gitignore`.
 
 If you want to configure the API base URL on the frontend, create a `.env` in `/client`:
 
@@ -185,9 +185,9 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
-### 🔐 Auth Routes — `/api/auth`
+###  Auth Routes — `/api/auth`
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
@@ -206,7 +206,7 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-### 🍕 Food Routes — `/api/food`
+###  Food Routes — `/api/food`
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
@@ -217,7 +217,7 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-### 📦 Order Routes — `/api/orders`
+###  Order Routes — `/api/orders`
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|:---:|
@@ -239,7 +239,7 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-## ▶️ Running the Project
+##  Running the Project
 
 ### Start the Backend
 
@@ -267,6 +267,6 @@ If you have `concurrently` set up in the root `package.json`:
 npm run dev
 ```
 
-> 💡 Make sure your MongoDB connection is working before starting the backend.
+>  Make sure your MongoDB connection is working before starting the backend.
 
 ---
