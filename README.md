@@ -22,26 +22,26 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
 | Technology | Purpose |
 |---|---|
-| ⚛️ React (Vite) | UI framework with fast HMR (Hot Module Replacement) |
-| 🎨 Tailwind CSS | Utility-first styling & glassmorphism UI |
-| 🔗 React Router DOM | Client-side routing & navigation |
-| 📡 Axios | HTTP requests to REST API |
+| React (Vite) | UI framework with fast HMR (Hot Module Replacement) |
+| Tailwind CSS | Utility-first styling & glassmorphism UI |
+| React Router DOM | Client-side routing & navigation |
+| Axios | HTTP requests to REST API |
 
 ### Backend
 
 | Technology | Purpose |
 |---|---|
-| 🟢 Node.js | Runtime environment |
-| 🚂 Express.js | RESTful API framework |
-| 🍃 MongoDB + Mongoose | NoSQL database & ODM |
-| 🔐 JWT (jsonwebtoken) | Stateless authentication |
-| 🔒 bcryptjs | Password hashing |
+|  Node.js | Runtime environment |
+|  Express.js | RESTful API framework |
+|  MongoDB + Mongoose | NoSQL database & ODM |
+|  JWT (jsonwebtoken) | Stateless authentication |
+|  bcryptjs | Password hashing |
 
 ---
 
