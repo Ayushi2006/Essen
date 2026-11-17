@@ -47,20 +47,20 @@
 
 ## ✨ Features
 
-- 🔐 **User Authentication** — Signup & Login with JWT tokens and bcrypt password hashing
-- 🍕 **Food Listings** — Food items fetched dynamically from MongoDB via REST API
-- 🔍 **Search Functionality** — Real-time dish search with instant filtering
-- 🛒 **Cart System** — Add/remove items with cart state managed via React Context
-- ➕➖ **Quantity Control** — Increment and decrement item quantities directly in cart
-- 💰 **Price Calculation** — Auto-calculated total that updates as you modify the cart
-- 💳 **Payment Page** — UI for UPI, Credit/Debit Card, and Cash on Delivery (no real gateway)
-- 📦 **Order Management** — Orders saved to MongoDB and viewable from your profile
-- 👤 **Profile Dashboard** — See your order history and current order status
-- 📱 **Responsive UI** — Works on all screen sizes, built with a glassmorphism aesthetic
+-  **User Authentication** — Signup & Login with JWT tokens and bcrypt password hashing
+-  **Food Listings** — Food items fetched dynamically from MongoDB via REST API
+-  **Search Functionality** — Real-time dish search with instant filtering
+-  **Cart System** — Add/remove items with cart state managed via React Context
+-  **Quantity Control** — Increment and decrement item quantities directly in cart
+-  **Price Calculation** — Auto-calculated total that updates as you modify the cart
+-  **Payment Page** — UI for UPI, Credit/Debit Card, and Cash on Delivery (no real gateway)
+-  **Order Management** — Orders saved to MongoDB and viewable from your profile
+-  **Profile Dashboard** — See your order history and current order status
+-  **Responsive UI** — Works on all screen sizes, built with a glassmorphism aesthetic
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 food-delivery-app/
@@ -121,7 +121,7 @@ food-delivery-app/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -158,7 +158,7 @@ Create a `.env` file inside the `/server` directory (see [Environment Variables]
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 Create a `.env` file in the `/server` directory:
 
